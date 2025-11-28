@@ -6,22 +6,12 @@
     <title>Kapcode - Software Made Simple</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJc5KzP+v1A3A7pP2GkM/u2v4a3bM2P4m2N4R2/4e3p5P1r9yA/4z5a5C4A/g==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+          
     <style>
-                .social-icons {
-            list-style-type: none;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .social-icons a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .social-icons a i {
-            font-size: 1.5em;
-        }
         :root {
             --primary-color: #2563eb;
             --secondary-color: #1e293b;
@@ -68,8 +58,9 @@
             color: var(--primary-color);
             text-decoration: none;
         }
-
-        nav a {
+        
+        /* 🌟 Improvement: Better selector specificity */
+        header nav a {
             margin-left: 20px;
             text-decoration: none;
             color: var(--secondary-color);
@@ -77,8 +68,29 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--primary-color); }
-
+        header nav a:hover { color: var(--primary-color); }
+        
+        /* --- Social Icons moved to be next to navigation for simpler control --- */
+        .social-icons {
+            list-style-type: none;
+            padding: 0; /* Changed from 20px to 0 for tighter spacing in header */
+            margin: 0 0 0 20px; /* Added margin to separate from nav links */
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Slightly reduced gap */
+        }
+        .social-icons a {
+            color: var(--secondary-color); /* Changed from #fff to match other nav links */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        .social-icons a i {
+            font-size: 1.25em; /* Slightly smaller icon size */
+        }
+        
         main { flex: 1; padding-top: 2em; }
         
         .container {
@@ -97,7 +109,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            background-color: #ddd; /* Fallback color if image missing */
+            background-color: #ddd; 
         }
 
         .carousel-slide {
@@ -127,6 +139,7 @@
             border-radius: 8px;
             text-align: left;
             max-width: 300px;
+            color: var(--secondary-color); /* Ensure text is readable */
         }
 
         /* --- Footer --- */
@@ -137,6 +150,21 @@
             padding: 1.5em 0;
             margin-top: auto;
         }
+        
+        /* 💡 Basic Mobile Query for header stack */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav, .social-icons {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+            header nav a {
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,22 +172,23 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Kapcode.</a>
-            <ul class="social-icons">
-                <li>
-                    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/your-twitter-profile" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-            </ul>
+            
             <nav>
                 <a href="pages/about.html">About</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/your-twitter-profile" target="_blank" aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -167,18 +196,18 @@
     <main>
         <div class="container">
             
-            <div class="carousel-container">
+            <div class="carousel-container" role="region" aria-label="Image Carousel" aria-live="polite">
                 
-                <div class="carousel-slide active">
-                    <img src="images/MainActivityImage.png" alt="Software development">
+                <div class="carousel-slide active" aria-hidden="false">
+                    <img src="images/MainActivityImage.png" alt="A computer screen showing code, representing software development.">
                     <div class="carousel-text">
                         <h3>Kapcode</h3>
                         <p>We simplify computing.</p>
                     </div>
                 </div>
 
-                <div class="carousel-slide">
-                    <img src="images/OpenMacropadImage.png" alt="Tech consulting">
+                <div class="carousel-slide" aria-hidden="true">
+                    <img src="images/OpenMacropadImage.png" alt="A custom macropad device used for tech consulting or specific tasks.">
                     <div class="carousel-text">
                         <h3>(Ctrl, Shift, R)</h3>
                         <p>Check for the newest version of our site?</p>
@@ -204,9 +233,16 @@
         const slideInterval = 4000; 
 
         function nextSlide() {
+            // Remove active class and set aria-hidden to true for the current slide
             slides[currentSlide].classList.remove('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'true');
+            
+            // Calculate next slide index
             currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Add active class and set aria-hidden to false for the next slide
             slides[currentSlide].classList.add('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'false');
         }
 
         setInterval(nextSlide, slideInterval);
