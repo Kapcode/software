@@ -59,7 +59,6 @@
             text-decoration: none;
         }
         
-        /* 🌟 Improvement: Better selector specificity */
         header nav a {
             margin-left: 20px;
             text-decoration: none;
@@ -70,17 +69,17 @@
 
         header nav a:hover { color: var(--primary-color); }
         
-        /* --- Social Icons moved to be next to navigation for simpler control --- */
+        /* --- Social Icons styling for 5 links --- */
         .social-icons {
             list-style-type: none;
-            padding: 0; /* Changed from 20px to 0 for tighter spacing in header */
-            margin: 0 0 0 20px; /* Added margin to separate from nav links */
+            padding: 0;
+            margin: 0 0 0 20px;
             display: flex;
             align-items: center;
-            gap: 15px; /* Slightly reduced gap */
+            gap: 12px; /* Adjusted gap for more icons */
         }
         .social-icons a {
-            color: var(--secondary-color); /* Changed from #fff to match other nav links */
+            color: var(--secondary-color);
             text-decoration: none;
             transition: color 0.3s;
         }
@@ -88,7 +87,7 @@
             color: var(--primary-color);
         }
         .social-icons a i {
-            font-size: 1.25em; /* Slightly smaller icon size */
+            font-size: 1.15em; /* Slightly reduced size for more icons */
         }
         
         main { flex: 1; padding-top: 2em; }
@@ -100,7 +99,7 @@
             text-align: center;
         }
 
-        /* --- CAROUSEL CSS --- */
+        /* --- CAROUSEL CSS (no changes) --- */
         .carousel-container {
             position: relative;
             max-width: 100%;
@@ -139,10 +138,10 @@
             border-radius: 8px;
             text-align: left;
             max-width: 300px;
-            color: var(--secondary-color); /* Ensure text is readable */
+            color: var(--secondary-color);
         }
 
-        /* --- Footer --- */
+        /* --- Footer (no changes) --- */
         footer {
             background-color: var(--secondary-color);
             color: var(--white);
@@ -151,7 +150,7 @@
             margin-top: auto;
         }
         
-        /* 💡 Basic Mobile Query for header stack */
+        /* Basic Mobile Query (no changes) */
         @media (max-width: 600px) {
             .header-container {
                 flex-direction: column;
@@ -179,13 +178,33 @@
                 <a href="#contact">Contact</a>
                 <ul class="social-icons">
                     <li>
-                        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.facebook.com/profile.php?id=61581267264151" target="_blank" aria-label="Facebook Profile">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/your-twitter-profile" target="_blank" aria-label="Twitter Profile">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://x.com/KAPCODE_Apps" target="_blank" aria-label="X (Twitter) Profile">
+                            <i class="fab fa-twitter"></i> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://patreon.com/kapcode" target="_blank" aria-label="Patreon Page">
+                            <i class="fab fa-patreon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@kapcode" target="_blank" aria-label="TikTok Profile">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@prospert0" target="_blank" aria-label="YouTube Channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </li>
                 </ul>
