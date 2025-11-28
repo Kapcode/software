@@ -133,3 +133,152 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1em;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 300px;
+            color: var(--secondary-color);
+        }
+
+        /* New style for the footer container to stack items and center them */
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px; /* Slight gap between icons and copyright text */
+        }
+
+        /* --- Footer (no changes to footer itself) --- */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: auto;
+        }
+        
+        /* Basic Mobile Query */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav {
+                margin-top: 10px;
+            }
+            header nav a {
+                margin: 0 10px;
+            }
+            /* The social-icons are now in the footer and handled by the new footer .container flex rules */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Kapcode.</a>
+            
+            <nav>
+                <a href="pages/about.html">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            
+            <div class="carousel-container" role="region" aria-label="Image Carousel" aria-live="polite">
+                
+                <div class="carousel-slide active" aria-hidden="false">
+                    <img src="images/MainActivityImage.png" alt="A computer screen showing code, representing software development.">
+                    <div class="carousel-text">
+                        <h3>Kapcode</h3>
+                        <p>We simplify computing.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-slide" aria-hidden="true">
+                    <img src="images/OpenMacropadImage.png" alt="A custom macropad device used for tech consulting or specific tasks.">
+                    <div class="carousel-text">
+                        <h3>(Ctrl, Shift, R)</h3>
+                        <p>Check for the newest version of our site?</p>
+                    </div>
+                </div>
+
+            </div>
+            <h2>Welcome to Kapcode</h2>
+            <p>We make software simple! From Macro solutions, to 2d game templates, come check us out!</p>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+                        <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61581267264151" target="_blank" aria-label="Facebook Profile">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/KAPCODE_Apps" target="_blank" aria-label="X (Twitter) Profile">
+                            <i class="fab fa-twitter"></i> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Kapcode/" target="_blank" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://patreon.com/kapcode" target="_blank" aria-label="Patreon Page">
+                            <i class="fab fa-patreon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/@kapcode" target="_blank" aria-label="TikTok Profile">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@prospert0" target="_blank" aria-label="YouTube Channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/kyle-prospert-75037195/" target="_blank" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+            </ul>
+            <p>&copy; 2025 Kapcode. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+        const slideInterval = 4000; 
+
+        function nextSlide() {
+            // Remove active class and set aria-hidden to true for the current slide
+            slides[currentSlide].classList.remove('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'true');
+            
+            // Calculate next slide index
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Add active class and set aria-hidden to false for the next slide
+            slides[currentSlide].classList.add('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'false');
+        }
+
+        setInterval(nextSlide, slideInterval);
+    </script>
+
+</body>
+</html>
