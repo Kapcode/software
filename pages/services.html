@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcode - Our Services</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover { color: var(--primary-color); }
+        
+        main { flex: 1; padding-top: 2em; }
+        
+        .container {
+            max-width: 1000px; /* Wider container for services grid */
+            margin: 0 auto;
+            padding: 0 1em;
+            text-align: center;
+        }
+
+        /* --- SERVICES SECTION CSS (Combined) --- */
+        .services-section {
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5em;
+        }
+
+        .services-section > p {
+            font-size: 1.1rem;
+            margin-bottom: 2em;
+            color: var(--text-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 2em;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 2em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image-container {
+            background-color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            margin-bottom: 1.5em;
+            flex-grow: 1;
+        }
+
+        .card-button, .primary-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75em 1.5em;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: auto; /* Pushes button to bottom of card */
+        }
+
+        .card-button:hover, .primary-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* --- Footer & Social Icons (Simplified for brevity) --- */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2em 0;
+            margin-top: auto;
+        }
+        /* [Additional Footer styles omitted for brevity] */
+
+        /* Basic Mobile Query */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav { margin-top: 10px; }
+            header nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="../index.html" class="logo">Kapcode.</a>
+            
+            <nav>
+                <a href="about.html">About</a>
+                <a href="../index.html#services">Services</a> 
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="services-section">
+                <h2>Explore Our Software Solutions</h2>
+                <p>We craft practical, powerful software, ranging from productivity macros to foundational 2D game templates.</p>
+                
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <div class="card-image-container">
+                            <i class="fas fa-gamepad card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Game Templates</h3>
+                        <p>Jumpstart your development with ready-to-use 2D game templates, featuring polished code and organized assets for a quick start.</p>
+                        <a href="game-templates.html" class="card-button">View Templates</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-image-container">
+                            <i class="fas fa-keyboard card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Custom Macro Solutions</h3>
+                        <p>Automate repetitive tasks with tailored macro software, designed to streamline workflows and boost productivity on any desktop.</p>
+                        <a href="macro-software.html" class="card-button">Learn More</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-image-container">
+                            <i class="fas fa-code card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Need a professional online presence? We offer simple, elegant, and modern web design and deployment solutions like this one!</p>
+                        <a href="web-dev.html" class="card-button">Get a Quote</a>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+    </main>
+
+        <footer>
+        <div class="container">
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61581267264151" target="_blank" aria-label="Facebook Profile">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/KAPCODE_Apps" target="_blank" aria-label="X (Twitter) Profile">
+                        <i class="fab fa-twitter"></i> 
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Kapcode/" target="_blank" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://patreon.com/kapcode" target="_blank" aria-label="Patreon Page">
+                        <i class="fab fa-patreon"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@kapcode" target="_blank" aria-label="TikTok Profile">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@prospert0" target="_blank" aria-label="YouTube Channel">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/kyle-prospert-75037195/" target="_blank" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <p>&copy; 2025 Kapcode. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
