@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapcode - Software Made Simple</title>
+    <title>Kapcode - Contact Us</title>
+    
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
     <link rel="stylesheet" href="styles.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -27,30 +28,21 @@
     </header>
 
     <main>
-        <div class="homepage-container">
-            
-            <div class="carousel-container" role="region" aria-label="Image Carousel" aria-live="polite">
+        <div class="container">
+            <section id="contact" class="contact-section">
+                <h2>Get In Touch</h2>
+                <p>Ready to simplify your computing? Contact us for custom software or template inquiries!</p>
                 
-                <div class="carousel-slide active" aria-hidden="false">
-                    <img src="images/MainActivityImage.png" alt="A computer screen showing code, representing software development.">
-                    <div class="carousel-text">
-                        <h3>Kapcode</h3>
-                        <p>We simplify computing.</p>
-                    </div>
-                </div>
-
-                <div class="carousel-slide" aria-hidden="true">
-                    <img src="images/OpenMacropadImage.png" alt="A custom macropad device used for tech consulting or specific tasks.">
-                    <div class="carousel-text">
-                        <h3>(Ctrl, Shift, R)</h3>
-                        <p>Check for the newest version of our site?</p>
-                    </div>
-                </div>
-
-            </div>
-            <h2>Welcome to Kapcode</h2>
-            <p>We make software simple! From Macro solutions, to 2d game templates, come check us out!</p>
-            
+                <iframe src="YOUR_UNIQUE_GOOGLE_FORM_URL" 
+                        title="Kapcode Contact Form"
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0">
+                    Loading…
+                </iframe>
+            </section>
         </div>
     </main>
 
@@ -97,24 +89,5 @@
             <p>&copy; 2025 Kapcode. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const slides = document.querySelectorAll('.carousel-slide');
-        let currentSlide = 0;
-        const slideInterval = 4000; 
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            slides[currentSlide].setAttribute('aria-hidden', 'true');
-            
-            currentSlide = (currentSlide + 1) % slides.length;
-            
-            slides[currentSlide].classList.add('active');
-            slides[currentSlide].setAttribute('aria-hidden', 'false');
-        }
-
-        setInterval(nextSlide, slideInterval);
-    </script>
-
 </body>
 </html>

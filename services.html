@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapcode - Software Made Simple</title>
+    <title>Kapcode - Our Services</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
     <link rel="stylesheet" href="styles.css">
@@ -27,30 +27,32 @@
     </header>
 
     <main>
-        <div class="homepage-container">
-            
-            <div class="carousel-container" role="region" aria-label="Image Carousel" aria-live="polite">
+        <div class="container">
+            <section class="services-section">
+                <h2>Explore Our Software Solutions</h2>
+                <p>We craft practical, powerful software, ranging from productivity macros to foundational 2D game templates.</p>
                 
-                <div class="carousel-slide active" aria-hidden="false">
-                    <img src="images/MainActivityImage.png" alt="A computer screen showing code, representing software development.">
-                    <div class="carousel-text">
-                        <h3>Kapcode</h3>
-                        <p>We simplify computing.</p>
+                <div class="services-grid">
+                    
+                    <div class="service-card">
+                        <div class="card-image-container">
+                            <i class="fas fa-gamepad card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Game Templates</h3>
+                        <p>Jumpstart your development with 2D game templates.</p>
+                        <a href="https://template.kapcode.us" class="card-button">View Templates</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="card-image-container">
+                            <i class="fas fa-keyboard card-icon" aria-hidden="true"></i>
+                        </div>
+                        <h3>Custom Macro Solutions</h3>
+                        <p>Automate repetitive tasks with OpenMacropad.</p>
+                        <a href="macro-software.html" class="card-button">Learn More</a>
                     </div>
                 </div>
-
-                <div class="carousel-slide" aria-hidden="true">
-                    <img src="images/OpenMacropadImage.png" alt="A custom macropad device used for tech consulting or specific tasks.">
-                    <div class="carousel-text">
-                        <h3>(Ctrl, Shift, R)</h3>
-                        <p>Check for the newest version of our site?</p>
-                    </div>
-                </div>
-
-            </div>
-            <h2>Welcome to Kapcode</h2>
-            <p>We make software simple! From Macro solutions, to 2d game templates, come check us out!</p>
-            
+            </section>
         </div>
     </main>
 
@@ -97,24 +99,5 @@
             <p>&copy; 2025 Kapcode. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const slides = document.querySelectorAll('.carousel-slide');
-        let currentSlide = 0;
-        const slideInterval = 4000; 
-
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            slides[currentSlide].setAttribute('aria-hidden', 'true');
-            
-            currentSlide = (currentSlide + 1) % slides.length;
-            
-            slides[currentSlide].classList.add('active');
-            slides[currentSlide].setAttribute('aria-hidden', 'false');
-        }
-
-        setInterval(nextSlide, slideInterval);
-    </script>
-
 </body>
 </html>
