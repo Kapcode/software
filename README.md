@@ -24,7 +24,7 @@ Examples of how to use the project will be added here.
 
 Guidelines for contributing to the project will be outlined here.
 
-See our website at [https://kapcode.us](https://kapcode.us) and follow us on:
+See our website at [https://software.kapcode.us](https://kapcode.us) and follow us on:
 
 *   [Facebook](https://www.facebook.com/profile.php?id=61581267264151)
 *   [Twitter](https://x.com/KAPCODE_Apps)
